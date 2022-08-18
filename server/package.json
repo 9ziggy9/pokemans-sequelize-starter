@@ -1,0 +1,22 @@
+{
+  "name": "pokeman-sequelize",
+  "version": "1.0.0",
+  "description": "* Pokemans * Cheat sheet ** Command Line *** Init project #+BEGIN_SRC console npx sequelize-cli init #+END_SRC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "dotenv-cli": "^6.0.0",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "sequelize": "^6.21.3",
+    "sequelize-cli": "^6.4.1",
+    "sqlite3": "^5.0.11"
+  }
+}

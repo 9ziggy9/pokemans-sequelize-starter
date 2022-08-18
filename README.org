@@ -1,4 +1,44 @@
 * Pokemans
+** Dependencies
+#+BEGIN_SRC console
+sequelize, sequelize-cli, dotenv, dotenv-cli, sqlite3, express, nodemon
+#+END_SRC
+** Set up express
+Create app.js and instantiate express. Give it a port to listen to.
+** Create .env
+Add DB_FILE, and add PORT
+** Config -- add .sequelizerc and database.js
+**** .sequelizerc
+Shows where DB paths exist. Boiler plate:
+#+BEGIN_SRC js
+  const path = require("path");
+
+  module.exports = {
+    config: path.resolve("config", "database.js"),
+    "models-path": path.resolve("db", "models"),
+    "seeders-path": path.resolve("db", "seeders"),
+    "migrations-path": path.resolve("db", "migrations"),
+  };
+#+END_SRC
+**** config/database.js
+Boiler plate code for SQLite application:
+#+BEGIN_SRC js
+module.exports = {
+  development: {
+    storage: process.env.DB_FILE,
+    dialect: "sqlite",
+    seederStorage: "sequelize",
+    benchmark: true,
+    logQueryParameters: true,
+    typeValidation: true,
+  },
+};
+#+END_SRC
+** Initialize sequelize
+#+BEGIN_SRC console
+npx dotenv sequelize init
+#+END_SRC
+** Migrations
 * Cheat sheet
 ** Command Line
 *** Init project
